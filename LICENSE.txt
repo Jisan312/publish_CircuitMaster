@@ -1,0 +1,14 @@
+Proprietary Software License
+
+Copyright (c) 2024 Ashraful Haque Jisan. All rights reserved.
+
+This software and associated files are the intellectual property of the copyright holder. 
+Unauthorized copying, modification, distribution, or use of this software or its components, 
+in any form, is strictly prohibited without prior written permission from the copyright holder.
+
+Users are not allowed to:
+- Distribute copies of the software.
+- Modify or adapt the code in any way.
+- Use the code for commercial purposes without explicit permission.
+
+By using this software, you agree to these terms and conditions. Any violation may result in legal action.

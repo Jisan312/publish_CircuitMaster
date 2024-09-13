@@ -1,0 +1,5 @@
+© 2024 Ashraful Haque Jisan. All rights reserved.
+
+This project, "Circuit Solver App," is the intellectual property of Ashraful Haque Jisan. It is an original concept designed to create and solve AC and DC circuits based on user instructions. Unauthorized copying, distribution, or modification of this code, in whole or in part, is strictly prohibited.
+
+Permission to use this software is granted only under explicit terms as set by the author. All rights are reserved and retained by the author, and legal action may be taken against violators of these rights.
