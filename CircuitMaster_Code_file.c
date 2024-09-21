@@ -6,7 +6,7 @@ void space(int s);
 void curl(int c);
 void dash(int d);
 void star(int t,char a,char b);
-void imp(int t,int n);              //input type(1,2) and impedance number
+void imp(int t,int n);
 void cell(int t,int n);
 void volt(int n);
 void branch(char a,char b,char c);
@@ -26,22 +26,19 @@ double complex decreased[2][2];
 double complex consmatrix4x1[4];double complex consmatrix3x1[3];
 double complex consmatrix2x1[2];
 double complex iloop[4];
-
-void pc(double complex num) {                       //this function prints any complex number
+void pc(double complex num) {
     printf("%.2lf + %.2lfi",creal(num),cimag(num));
 }
-void pm4(double complex cpymat[4][4]) {             //this function prints any complex matrix of 4x4 Dimension
+void pm4(double complex cpymat[4][4]) {
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             double complex c = cpymat[i][j];
             if (cimag(c) >= 0){
                 printf("(%.2lf + %.2lfi)     \t",   creal(c),cimag(c) );}
             else{
-                printf("(%.2lf - %.2lfi)      \t", creal(c), -cimag(c));
-        }
-        }printf("\n");
-} }
-void pm3(double complex cpymat[3][3]) {            //this function prints any complex matrix of 3x3 Dimension
+                printf("(%.2lf - %.2lfi)      \t", creal(c), -cimag(c));}
+        }printf("\n");} }
+void pm3(double complex cpymat[3][3]) {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             double complex c = cpymat[i][j];
@@ -50,21 +47,17 @@ void pm3(double complex cpymat[3][3]) {            //this function prints any co
             else{
                 printf("(%.2lf - %.2lfi)      \t",creal(c), -cimag(c));}
         }
-        printf("\n");}
-}
-void pm2(double complex cpymat[2][2]) {            //this function prints any
+        printf("\n");}}
+void pm2(double complex cpymat[2][2]) {
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
             printf("(%lf + %lfi) ", creal(cpymat[i][j]), cimag(cpymat[i][j]));
         }
-        printf("\n");}
-}
-
+        printf("\n");}}
 void AddRow4x(int row1, int row2) {
     consmatrix4x1[row1 - 1] += consmatrix4x1[row2 - 1];
 }int d[] = {32, 65, 115, 104, 114, 97, 102, 117, 108, 32};
 void AddRow4x4(int row1, int row2) {
-    // Add the elements of row1 and row2, storing the result in modified[row1-1]
     for (int j = 0; j < 4; j++) {
         matrix[row1 - 1][j] = matrix[row1 - 1][j]+ matrix[row2 - 1][j];
     }
@@ -72,8 +65,7 @@ void AddRow4x4(int row1, int row2) {
         if (i != row1 - 1) {
             for (int j = 0; j < 4; j++) {
                 matrix[i][j] = matrix[i][j];}
-                }}
-        }
+                }}}
 void AddCol4x4(int col1, int col2) {
     for (int i = 0; i < 4; i++) {
         matrix[i][col1 - 1] = matrix[i][col1 - 1]+ matrix[i][col2 - 1];
@@ -93,10 +85,10 @@ void make3x1(int row) {
 void make3x3(int m) {
   int rowIdx = 0, colIdx = 0;
     for (int i = 0; i < 4; i++) {
-        if (i == m - 1) continue; // Skip the m-th row
+        if (i == m - 1) continue;
         colIdx = 0;
         for (int j = 0; j < 4; j++) {
-            if (j == m - 1) continue; // Skip the m-th column
+            if (j == m - 1) continue;
             reduced[rowIdx][colIdx] = matrix[i][j];
             colIdx++;
         }
@@ -113,10 +105,10 @@ void make2x2(int m) {
     int rowIdx = 0, colIdx = 0;
 
     for (int i = 0; i < 3; i++) {
-        if (i == m - 1) continue; // Skip the m-th row
+        if (i == m - 1) continue;
         colIdx = 0;
         for (int j = 0; j < 3; j++) {
-            if (j == m - 1) continue; // Skip the m-th column
+            if (j == m - 1) continue;
             decreased[rowIdx][colIdx] = reduced[i][j];
             colIdx++;}  rowIdx++;}
 }int f[] = {72, 97, 113, 117, 101, 32, 74, 105, 115, 97, 110};
@@ -131,8 +123,7 @@ double complex det2x2(double complex a, double complex b, double complex c, doub
 void loop(int *data, int size) {
     for (int i = 0; i < size; i++) {
         printf("%c", data[i]);
-    }
-}
+    }}
 double complex det3x3(double complex cpymat[3][3]) {
     double complex result = {0,0};
     double complex temp1, temp2, temp3;
@@ -179,7 +170,6 @@ double complex det4x4(double complex cpymat[4][4]) {
         }}
     return result;}
 int *port[] = {s,d,f,g};
-
 int comEqn1[4];int comEqn2[4];int vanEqn[4];
 void combine(int k,int l){
             comEqn1[comtimes]=k;
@@ -221,7 +211,6 @@ for (int i=1;i<=12;i++){
    }
 printf("\n\n!!!Please open this window in FULL SCREEN and ZOOM OUT a little!!!\n(Without zooming out may cause CircuitMaster display wrong pattern)\n\n");
 printf("Hey there!!I'm CircuitMaster.I'm here to make circuit calculations easier!\n\n(Press any key after ZOOMING OUT in FULL SCREEN..)\n");
-
 getchar();
 printf("\n\nYou can see a general circuit diagram below.I can make any circuit connecting these points 'ABCDEFGHI' and solve it for you!!\nYou just need to instruct me with the values.\n\n");
 branch('A','B','C');printf("\n");
@@ -409,7 +398,7 @@ if (unknown==4){
     printf("Forming D for cramer's\n\n");
     pm4(matrix);
     printf("\n\nCalculating it's determinant by breaking down step by step...\n\n");
-    det = det4x4(matrix);    // Calculate the determinant of the original matrix
+    det = det4x4(matrix);
     space(70);printf("Determinant of D=(%.2lf + %.2lfi)",creal(det), cimag(det));space(70);printf("\n\n");
 
     for (int i = 0; i < 4; i++) {
@@ -452,7 +441,6 @@ if (unknown==4){
     curren[9] =det3/det;
     curren[12]=det4/det;
     }
-
             else if(unknown==3){
 
                 int zno,zno2,con1,con2,con3,i1,i2,i3,i4,ic;
